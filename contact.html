@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Check the latest AU Lotto results, winning numbers, and jackpot updates. Your go-to Aussie source for Oz Lotto, Powerball, Saturday Lotto and more."
+        />
+        <meta
+            name="keywords"
+            content="AU Lotto, Aussie Lotto, Oz Lotto results, Powerball Australia, Saturday Lotto, Lotto Australia, Australian lottery numbers, draw results, Aussie jackpots"
+        />
+        <meta name="author" content="Ben Thompson" />
+        <meta
+            property="og:title"
+            content="AU Lotto Draws & Latest Results | Official Aussie Numbers"
+        />
+        <meta
+            property="og:description"
+            content="Stay up to date with AU Lotto. Find live draw results, winning combos, and jackpot prizes across Australia's most popular lotteries."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_AU" />
+        <title>LuckyOzDraws</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Swiper CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+        />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/globals.css" />
+
+        <style>
+            :root {
+                --fs: 0.85vw;
+                font-size: var(--fs);
+                font-family: "Inter", serif;
+            }
+
+            @media (max-width: 1280px) {
+                :root {
+                    --fs: 1.5vw;
+                }
+            }
+
+            @media (max-width: 768px) {
+                :root {
+                    --fs: 2vw;
+                }
+            }
+
+            @media (max-width: 640px) {
+                :root {
+                    --fs: 2.75vw;
+                }
+            }
+
+            body {
+                font-family: "Inter", serif;
+            }
+        </style>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        zIndex: {
+                            100: "100",
+                        },
+                    },
+                },
+                plugins: [],
+            };
+        </script>
+    </head>
+    <body class="min-h-screen bg-[#FFFFFF]">
+        <!-- Toast Notifications -->
+        <div
+            id="login-toast"
+            class="toast fixed hidden bottom-6 right-6 z-[1000] bg-[#F95700FF] text-[#FFFFFF] text-center max-md:text-lg px-6 py-3 rounded-md shadow-md transition-all"
+        >
+            Entry submitted successfully for AU Lotto!
+        </div>
+
+        <div
+            id="register-toast"
+            class="toast fixed hidden bottom-6 right-6 z-[1000] bg-[#F95700FF] text-[#FFFFFF] text-center max-md:text-lg px-6 py-3 rounded-md shadow-md transition-all"
+        >
+            Your AU Lotto entry is now confirmed!
+        </div>
+
+        <!-- Scroll to Top -->
+        <div
+            class="scroll-up flex items-center z-[100] justify-center fixed bottom-16 right-6 w-12 h-12 max-md:w-14 max-md:h-14 bg-[#F95700FF] cursor-pointer rounded-full text-white shadow-xl hover:shadow-2xl hover:scale-105 opacity-0 transition duration-300"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-up w-5 h-5 max-md:w-6 max-md:h-6"
+            >
+                <path d="m5 12 7-7 7 7" />
+                <path d="M12 19V5" />
+            </svg>
+        </div>
+
+        <!-- Header -->
+        <header
+            id="header"
+            class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5"
+            style="background: #fff"
+        >
+            <div class="w-[60%] max-xl:w-[75%] max-md:w-[90%] mx-auto px-4">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div>
+                            <h1
+                                class="text-2xl max-md:text-3xl font-bold text-[#F95700FF]"
+                            >
+                                LuckyOzDraws
+                            </h1>
+                        </div>
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a
+                            href="index.html#how-it-works"
+                            data-scroll="how-it-works"
+                            class="text-gray-700 hover:text-[#F95700FF] transition-colors"
+                        >
+                            How It Works
+                        </a>
+                        <a
+                            href="index.html#winners"
+                            data-scroll="winners"
+                            class="text-gray-700 hover:text-[#F95700FF] transition-colors"
+                        >
+                            Winners
+                        </a>
+                        <a
+                            href="index.html#about"
+                            data-scroll="about"
+                            class="text-gray-700 hover:text-[#F95700FF] transition-colors"
+                        >
+                            About Us
+                        </a>
+                        <a
+                            href="index.html#faq"
+                            data-scroll="faq"
+                            class="text-gray-700 hover:text-[#F95700FF] transition-colors"
+                        >
+                            FAQ
+                        </a>
+                        <a
+                            href="contact.html"
+                            class="text-gray-700 hover:text-[#F95700FF] transition-colors"
+                        >
+                            Contact
+                        </a>
+                    </nav>
+
+                    <!-- Mobile Menu Button -->
+                    <button
+                        id="mobile-menu-button"
+                        class="md:hidden text-gray-700"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            id="menu-icon"
+                        >
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            id="close-icon"
+                            class="hidden"
+                        >
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div
+            id="mobile-menu"
+            class="fixed inset-0 z-40 bg-white pt-20 px-4 hidden"
+        >
+            <nav class="flex flex-col gap-4">
+                <a
+                    href="index.html#how-it-works"
+                    data-scroll="how-it-works"
+                    class="text-lg font-medium text-gray-800 py-3 border-b border-gray-100 mobile-menu-link"
+                >
+                    How It Works
+                </a>
+                <a
+                    href="index.html#winners"
+                    data-scroll="winners"
+                    class="text-lg font-medium text-gray-800 py-3 border-b border-gray-100 mobile-menu-link"
+                >
+                    Winners
+                </a>
+                <a
+                    href="index.html#about"
+                    data-scroll="about"
+                    class="text-lg font-medium text-gray-800 py-3 border-b border-gray-100 mobile-menu-link"
+                >
+                    About Us
+                </a>
+                <a
+                    href="index.html#faq"
+                    data-scroll="faq"
+                    class="text-lg font-medium text-gray-800 py-3 border-b border-gray-100 mobile-menu-link"
+                >
+                    FAQ
+                </a>
+                <a
+                    href="contact.html"
+                    class="text-lg font-medium text-gray-800 py-3 border-b border-gray-100 mobile-menu-link"
+                >
+                    Contact
+                </a>
+            </nav>
+        </div>
+
+        <!-- Page Header -->
+        <section
+            class="pt-32 pb-10 md:pt-40 md:pb-16 bg-gradient-to-b from-blue-50 to-white"
+        >
+            <div class="w-[60%] max-xl:w-[75%] max-md:w-[90%] mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h1
+                        class="text-4xl md:text-5xl font-bold mb-4 text-[#F95700FF]"
+                    >
+                        Contact AU Lotto Support
+                    </h1>
+                    <p class="text-gray-700 max-md:text-lg mb-0">
+                        Have questions or need assistance with AU Lotto? Our
+                        dedicated support team is here to help you with
+                        everything related to AU Lotto games, tickets, and
+                        results.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16">
+            <div class="w-[60%] max-xl:w-[75%] max-md:w-[90%] mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <!-- Contact Form -->
+                        <div class="bg-white rounded-xl shadow-lg p-8">
+                            <h2
+                                class="text-2xl max-md:text-3xl font-bold mb-6 text-[#F95700FF]"
+                            >
+                                Send Us a Message
+                            </h2>
+                            <form
+                                id="contact-form"
+                                class="space-y-6"
+                                action="thanks.html"
+                                method="get"
+                            >
+                                <div
+                                    class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                                >
+                                    <div>
+                                        <label
+                                            for="contact-name"
+                                            class="block text-sm max-md:text-base font-medium text-gray-700 mb-1"
+                                        >
+                                            Your Name
+                                        </label>
+                                        <input
+                                            id="contact-name"
+                                            name="name"
+                                            type="text"
+                                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            for="contact-email"
+                                            class="block text-sm max-md:text-base font-medium text-gray-700 mb-1"
+                                        >
+                                            Email Address
+                                        </label>
+                                        <input
+                                            id="contact-email"
+                                            name="email"
+                                            type="email"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label
+                                        for="contact-subject"
+                                        class="block text-sm max-md:text-base font-medium text-gray-700 mb-1"
+                                    >
+                                        Subject
+                                    </label>
+                                    <select
+                                        id="contact-subject"
+                                        name="subject"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        required
+                                    >
+                                        <option value="" disabled selected>
+                                            Select a subject
+                                        </option>
+                                        <option value="general">
+                                            General Questions about AU Lotto
+                                        </option>
+                                        <option value="ticket">
+                                            Ticket Purchase & Validation
+                                        </option>
+                                        <option value="results">
+                                            Draw Results & Winning Numbers
+                                        </option>
+                                        <option value="prizes">
+                                            Prize Claims & Verification
+                                        </option>
+                                        <option value="technical">
+                                            Technical Issues & Website Help
+                                        </option>
+                                        <option value="other">
+                                            Other AU Lotto Queries
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label
+                                        for="contact-message"
+                                        class="block text-sm max-md:text-base font-medium text-gray-700 mb-1"
+                                    >
+                                        Your Message
+                                    </label>
+                                    <textarea
+                                        id="contact-message"
+                                        name="message"
+                                        rows="5"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <div>
+                                    <button
+                                        type="submit"
+                                        class="bg-[#F95700FF] text-sm text-white px-6 py-3 rounded-md transition-colors"
+                                    >
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div>
+                            <div
+                                class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl shadow-lg p-8 text-white mb-8"
+                            >
+                                <h2 class="text-2xl font-bold mb-6">
+                                    Contact Information
+                                </h2>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mt-1">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="text-blue-200"
+                                            >
+                                                <path
+                                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                                ></path>
+                                            </svg>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h3
+                                                class="text-lg max-md:text-xl font-semibold text-blue-100"
+                                            >
+                                                Phone
+                                            </h3>
+                                            <p class="max-md:text-lg">
+                                                +61386642664
+                                            </p>
+                                            <p
+                                                class="text-sm max-md:text-base text-blue-200"
+                                            >
+                                                Monday to Friday, 9am to 6pm
+                                                AEST
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mt-1">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="text-blue-200"
+                                            >
+                                                <path
+                                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                                ></path>
+                                                <polyline
+                                                    points="22,6 12,13 2,6"
+                                                ></polyline>
+                                            </svg>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h3
+                                                class="text-lg max-md:text-xl font-semibold text-blue-100"
+                                            >
+                                                Email
+                                            </h3>
+
+                                            <p
+                                                class="text-sm max-md:text-base text-blue-200"
+                                            >
+                                                lucky_oz_draws@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mt-1">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="text-blue-200"
+                                            >
+                                                <path
+                                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                                ></path>
+                                                <circle
+                                                    cx="12"
+                                                    cy="10"
+                                                    r="3"
+                                                ></circle>
+                                            </svg>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h3
+                                                class="text-lg max-md:text-xl font-semibold text-blue-100"
+                                            >
+                                                Office
+                                            </h3>
+                                            <p class="max-md:text-lg">
+                                                42/80 Collins St, Melbourne VIC
+                                                3000, Australia
+                                            </p>
+                                            <p
+                                                class="text-sm max-md:text-base text-blue-200"
+                                            >
+                                                By appointment only
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39984.254138107994!2d144.92266483136092!3d-37.82530403640393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642c84a923279%3A0xa52a18f07de2f716!2sBusiness%20Council%20of%20Australia!5e0!3m2!1suk!2shu!4v1747740562356!5m2!1suk!2shu"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+        <!-- Footer -->
+        <footer class="bg-[#141833] text-white pt-16 pb-24">
+            <div class="w-[60%] max-xl:w-[75%] max-md:w-[90%] mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="flex flex-col">
+                        <a
+                            href="index.html"
+                            class="flex items-center gap-2 mb-6"
+                        >
+                            <div>
+                                <h3
+                                    class="text-2xl max-md:text-3xl font-bold text-white"
+                                >
+                                    LuckyOzDraws
+                                </h3>
+                            </div>
+                        </a>
+                        <p
+                            class="text-[#888CA8] mb-4 text-sm max-md:text-base w-[60%] max-md:w-full"
+                        >
+                            Your trusted source for all things AU Lotto — making
+                            winning moments possible every day.
+                        </p>
+                        <p>42/80 Collins St, Melbourne VIC 3000, Australia</p>
+                        <p>+61386642664</p>
+                        <p>lucky_oz_draws@gmail.com</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-semibold max-md:text-lg mb-4">
+                                Navigation
+                            </h3>
+                            <ul class="space-y-2">
+                                <li>
+                                    <a
+                                        href="index.html#how-it-works"
+                                        data-scroll="how-it-works"
+                                        class="text-[#888CA8] text-sm max-md:text-base hover:text-white transition-colors"
+                                    >
+                                        How It Works
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="index.html#winners"
+                                        data-scroll="winners"
+                                        class="text-[#888CA8] text-sm max-md:text-base hover:text-white transition-colors"
+                                    >
+                                        Winners
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="index.html#about"
+                                        data-scroll="about"
+                                        class="text-[#888CA8] text-sm max-md:text-base hover:text-white transition-colors"
+                                    >
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="index.html#faq"
+                                        data-scroll="faq"
+                                        class="text-[#888CA8] text-sm max-md:text-base hover:text-white transition-colors"
+                                    >
+                                        FAQ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="contact.html"
+                                        class="text-[#888CA8] text-sm max-md:text-base hover:text-white transition-colors"
+                                    >
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold max-md:text-lg mb-4">
+                                Legal
+                            </h3>
+                            <ul class="space-y-2">
+                                <li>
+                                    <a
+                                        href="privacy-policy.html"
+                                        class="text-[#888CA8] text-sm max-md:text-base hover:text-white transition-colors"
+                                    >
+                                        Privacy Policy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="terms-of-use.html"
+                                        class="text-[#888CA8] text-sm max-md:text-base hover:text-white transition-colors"
+                                    >
+                                        Terms and Conditions
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="cookie-policy.html"
+                                        class="text-[#888CA8] text-sm max-md:text-base hover:text-white transition-colors"
+                                    >
+                                        Cookies Policy
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-[#888CA8] pt-8 mt-8 text-center text-white text-sm max-md:text-base"
+                >
+                    <p>
+                        <span id="current-year"></span>
+                        <strong>Disclaimer:</strong><br />
+                        The content on this website is intended for
+                        informational purposes only regarding AU Lotto. We aim
+                        to provide accurate and current AU Lotto results,
+                        jackpot information, and draw schedules. However, we do
+                        not guarantee the completeness or precision of the
+                        information presented here.<br />
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Cookie banner -->
+        <div class="cookie-wrapper show">
+            <div>
+                <i class="bx bx-cookie"></i>
+                <h2 style="text-align: center">Cookie Consent</h2>
+            </div>
+
+            <div class="data">
+                <p>
+                    This website uses cookies to provide you with a better and
+                    more relevant browsing experience.
+                    <a href="cookie-policy.html">Learn more...</a>
+                </p>
+            </div>
+
+            <div class="buttons">
+                <button class="cookie-button" id="acceptBtn">Accept</button>
+                <button class="cookie-button" id="declineBtn">Decline</button>
+            </div>
+        </div>
+        <!-- End Cookie banner -->
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <!-- Custom JS -->
+        <script src="js/script.js"></script>
+        <script src="js/cookiebanner.js"></script>
+    </body>
+</html>
