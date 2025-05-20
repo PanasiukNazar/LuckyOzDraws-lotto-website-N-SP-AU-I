@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize animations
   animateBackgroundElements()
 
-  // Winners carousel
+  // Services carousel
   function initWinnersCarousel() {
 const winners = [
   { 
@@ -368,7 +368,7 @@ const winners = [
     animateOnScroll("countdown-title", "opacity-0 translate-y-5", "opacity-100 translate-y-0", 0)
     animateOnScroll("countdown-timer", "opacity-0 scale-95", "opacity-100 scale-100", 200)
 
-    // Winners section animations
+    // Services section animations
     animateOnScroll("winners-title", "opacity-0 translate-y-5", "opacity-100 translate-y-0", 0)
     animateOnScroll("winners-link", "opacity-0", "opacity-100", 600)
 
