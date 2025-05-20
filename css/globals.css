@@ -137,6 +137,19 @@ body {
   transform: rotate(180deg);
 }
 
+.cookies h1, h2, h3 {
+  color: #F95700FF !important;
+}
+
+.terms h1, h2, h3 {
+  color: #F95700FF !important;
+}
+
+.privacy h1, h2, h3, h4 {
+  color: #F95700FF !important;
+}
+
+
 .cookie-wrapper {
     position: fixed;
     bottom: 0px;
